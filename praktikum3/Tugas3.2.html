@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas3.2</title>
+    <style>
+        @font-face {
+            font-family: 'Nosifer';
+            src: url(font/Nosifer.ttf);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: backgroundAnimation 3s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-color: #ffcc00;
+            }
+            100% {
+                background-color: #3399ff;
+            }
+        }
+
+        header {
+            background-image: url(wp.png);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .link {
+            text-decoration: none;
+            color: white;
+            transition: color 0.2s;
+            font-family: 'Nosifer';
+            font-size: 50px;
+        }
+
+        .link:hover {
+            color: #ff0000;
+        }
+
+        ul.nav {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        ul.nav li {
+            margin-right: 50px;
+        }
+
+        ul.nav li:last-child {
+            margin-right: 0;
+        }
+
+        ul.nav li a {
+            text-decoration: none;
+            cursor: grabbing;
+            color: black;
+            background-color: aliceblue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        ul.nav li a:hover {
+            background-color: #850202;
+            color: #fff;
+        }
+
+        .warna {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .opsi-warna {
+            width: 100px;
+            height: 100px;
+            cursor: progress;
+            transition: transform 0.2s;
+            border-radius: 50px;
+        }
+
+        .opsi-warna:hover {
+            transform: scale(1.2);
+        }
+
+        .form-label {
+            display: block;
+            margin-top: 15px;
+            color: white;
+            background-color: #0d0d73;
+            font-weight: bold;
+            width: 45%;
+            border-radius: 20%;
+        }
+
+        .check {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .tombol-pesan {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ffbf; 
+            color: black; 
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .tombol-pesan:hover {
+            background-color: #6b00c2;
+            color: white;
+            transform: scale(1.1); 
+        }
+
+        .gambar {
+            cursor: not-allowed;
+            transition: 0.2s;
+        }
+
+        .gambar:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+        <header>
+            <h1><a href="#" class="link" title="klik sini" >Toko Cat Dorla</a></h1>
+            <ul class="nav">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="https://instagram.com/fayyadh_khoiry?igshid=NTc4MTIwNjQ2YQ==">Tentang Pemilik</a></li>
+                <li><a href="https://wa.me/6285714858018?text=Hi%20Fayad">Kontak</a></li>
+            </ul>
+        </header>
+        <div class="warna">
+            <div class="opsi-warna" style="background-color: white;"></div>
+            <div class="opsi-warna" style="background-color: red;"></div>
+            <div class="opsi-warna" style="background-color: green;"></div>
+            <div class="opsi-warna" style="background-color: yellow;"></div>
+            <div class="opsi-warna" style="background-color: blue;"></div>
+            <div class="opsi-warna" style="background-color: purple;"></div>
+            <div class="opsi-warna" style="background-color: #000;"></div>
+         </div>
+         <br>
+         <table border="0" width="100%">
+            <tr>
+                <td width="50%" align="center">
+                    <img src="cat.png" class="gambar" alt="cat" style="width: 400px; height: 300px;">
+                </td>
+                <td width="50%" align="center">
+                     <form action="Tugas3.2-submit.html" method="post">
+                         <label for="color" class="form-label">Pilih Warna Cat:</label>
+                         <select id="color" name="color">
+                            <option value="Putih">Putih</option>
+                            <option value="Merah">Merah</option>
+                            <option value="Hijau">Hijau</option>
+                            <option value="Kuning">Kuning</option>
+                            <option value="Biru">Biru</option>
+                            <option value="Ungu">Ungu</option>
+                            <option value="Hitam">Hitam</option>
+                        </select>
+
+                        <label for="Jumlah" class="form-label">Jumlah Cat yang Dipesan:</label>
+                        <input type="number" id="Jumlah" name="Jumlah" min="12" max="" required>
+
+                        <label for="Nama" class="form-label">Nama Lengkap Anda:</label>
+                        <input type="text" id="Nama" name="Nama" required>
+
+                        <label for="email" class="form-label">Alamat Email Anda:</label>
+                        <input type="email" id="email" name="email" placeholder="contoh@gmail.com" required>
+
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="password" required><br>
+
+                        <input type="checkbox" id="ingat-saya" name="ingat-saya">
+                        <label for="ingat-saya" class="check">Simpan</label><br>
+
+                        <button class="tombol-pesan" type="submit">Pesan Cat</button>
+                        <button class="tombol-pesan" type="reset">Reset</button>
+                    </form>
+                </td>
+            </tr>
+         </table>
+</body>
+</html>
